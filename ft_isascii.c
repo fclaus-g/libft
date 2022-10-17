@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: n2 <n2@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 11:53:41 by n2                #+#    #+#             */
-/*   Updated: 2022/10/10 12:04:52 by n2               ###   ########.fr       */
+/*   Created: 2022/09/23 17:42:30 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/09/30 12:25:52 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,20 @@ int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
-	return (0);
+	else
+		return (0);
 }
+/*
+#include <stdio.h>
+#include <ctype.h>
+
+int	main(void)
+{
+	int	n;
+
+	n = 5;
+	printf("%d\n",ft_isascii(n));
+	printf("%d\n",isascii(n));
+	return(0);
+}
+*/

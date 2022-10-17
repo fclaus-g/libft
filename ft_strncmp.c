@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: n2 <n2@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 19:15:47 by n2                #+#    #+#             */
-/*   Updated: 2022/10/10 19:25:03 by n2               ###   ########.fr       */
+/*   Created: 2022/10/05 10:41:39 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/05 14:06:39 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,20 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		if (s1[count] != s2[count])
 			return ((unsigned char)s1[count] - (unsigned char)s2[count]);
 		count++;
-	}
+	}	
 	return (0);
 }
+/*
+int	main(void)
+{
+	const char	*s1;
+	const char	*s2;
+	size_t	n;
+
+	s1 = "abcdef";
+	s2 = "abc\xfdxx";
+	n = 5;
+	printf("La diferencia es: %d\n", ft_strncmp(s1, s2, n));
+	return (0);
+	
+}*/

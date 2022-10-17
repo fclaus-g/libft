@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 17:07:51 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/04 11:04:29 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/14 17:44:12 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/14 19:04:57 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strdup(const char *s1)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	else
-		return (0);
-}
-/*
-#include <stdio.h>
-int main(void)
-{
-    int n;
+	size_t		count;
+	size_t		len;
+	char		*copy;
 
-    n = 32;
-    printf ("%d\n", ft_isalnum(n));
-    return(0);
-}*/
+	count = 0;
+	len = ft_strlen(s1);
+	copy = malloc(sizeof((*s1) * (len)));
+	while (count <= len)
+	{
+		copy[count] = s1[count];
+		count++;
+	}
+	copy[count] = '\0';
+	return (copy);
+}
+
+// int	main(void)
+// {
+// 	const char *s1 = "tabataba";
+
+// 	ft_strdup(s1);
+// 	return (0);
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: n2 <n2@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 18:34:34 by n2                #+#    #+#             */
-/*   Updated: 2022/10/13 12:56:57 by n2               ###   ########.fr       */
+/*   Created: 2022/10/04 11:26:18 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/04 14:12:48 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,13 @@ char	*ft_strrchr(const char *s, int c)
 		return (&cpy[count]);
 	return (last);
 }
+/*
+int main() 
+{
+    const char *str = "heea";
+    char  c;
+   
+    c = 'a';
+    printf("Found letter:%c\n", *ft_strrchr(str, c));
+   return (0);
+}*/

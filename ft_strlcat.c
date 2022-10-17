@@ -3,34 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: n2 <n2@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 12:35:10 by n2                #+#    #+#             */
-/*   Updated: 2022/10/13 12:54:53 by n2               ###   ########.fr       */
+/*   Created: 2022/09/28 14:05:12 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/03 15:32:34 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	cpy;
-	size_t	c;
 	size_t	lendst;
 	size_t	lensrc;
+	size_t	copier;
+	size_t	c2;
 
 	lendst = ft_strlen(dst);
 	lensrc = ft_strlen(src);
-	cpy = lendst;
-	c = 0;
+	copier = lendst;
+	c2 = 0;
 	if (dstsize <= lendst || dstsize == 0)
 		return (dstsize + lensrc);
-	while (src[c] && cpy < dstsize - lendst -1)
+	while (src[c2] != '\0' && c2 < dstsize - lendst - 1)
 	{
-		dst[cpy] = src[c];
-		cpy++;
-		c++;
+		dst[copier] = src[c2];
+		copier++;
+		c2++;
 	}
-	dst[cpy] = '\0';
+	dst[copier] = '\0';
 	return (lendst + lensrc);
 }
+/*
+int	main(void)
+{
+	size_t	dstsize;
+	char	*dst;
+	const char	*src;
+
+	dst = "hola";
+	src = "quease";
+	dstsize = 5;
+	ft_strlcat(dst, src, dstsize);
+	printf("%s\n", dst);
+	printf("%zu\n", ft_strlcat(dst, src, dstsize));
+	return(0);
+}*/

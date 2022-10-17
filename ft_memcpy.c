@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 17:07:51 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/04 11:04:29 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/06 11:02:03 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/07 15:54:19 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	else
-		return (0);
-}
-/*
-#include <stdio.h>
-int main(void)
-{
-    int n;
+	size_t	cpy;
 
-    n = 32;
-    printf ("%d\n", ft_isalnum(n));
-    return(0);
-}*/
+	cpy = 0;
+	if (!dst && !src)
+		return (0);
+	while (cpy < n)
+	{
+		((unsigned char *)dst)[cpy] = ((unsigned char *)src)[cpy];
+		cpy++;
+	}
+	return (dst);
+}

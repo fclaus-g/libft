@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 17:07:51 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/04 11:04:29 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/07 13:14:31 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/07 16:44:26 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	else
-		return (0);
-}
-/*
-#include <stdio.h>
-int main(void)
-{
-    int n;
+	size_t	cpy;
 
-    n = 32;
-    printf ("%d\n", ft_isalnum(n));
-    return(0);
-}*/
+	cpy = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (src < dst)
+	{
+		while (len != 0)
+		{
+			len--;
+			((char *)dst)[len] = ((char *)src)[len];
+		}
+	}
+	else
+	{
+		while (cpy < len)
+		{
+			((char *)dst)[cpy] = ((char *)src)[cpy];
+			cpy++;
+		}
+	}
+	return (dst);
+}
