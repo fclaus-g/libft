@@ -6,12 +6,14 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:41:39 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/05 14:06:39 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:09:27 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//compara 'n' caracteres entre s1 y s2. Los caracteres que aparecen despues 
+//de'\0' no se comparan.
+//RETURN un int < o > que 0 utilizando unsigned char
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	count;

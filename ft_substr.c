@@ -3,37 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: n2 <n2@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 16:47:23 by n2                #+#    #+#             */
-/*   Updated: 2022/10/18 17:53:17 by n2               ###   ########.fr       */
+/*   Created: 2022/10/17 17:24:48 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/24 12:24:37 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char *ft_substr(char const *s, unsigned int start, size_t len)
+//Reserva con malloc y devuelve una substring de s. La sub string empieza 
+//desde start y tiene una longitud de len.
+//RETURN la string resultante o NULL si falla la reserva de memoria
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	unsigned int		count;
-	size_t	c2;
+	size_t			count;
+	char			*sub;
+	size_t			slen;
 
-	count = 0;
-	sub = (char*)malloc(sizeof(char) * (len + 1));
-	if (s == 0)
+	if (!s)
 		return (0);
+	slen = ft_strlen(s);
+	if (start > slen)
+		return (ft_strdup(""));
+	if (len > slen)
+		len = slen - start;
+	sub = (char *)malloc(sizeof (char) * len + 1);
 	if (sub == 0)
 		return (0);
-	while (count < len && start < ft_strlen(s))
-	{
+	count = 0;
+	while (s[count] && (count < len))
+	{	
 		sub[count] = s[start + count];
 		count++;
 	}
-	sub[count] = '\0';
+	sub[count] = 0;
 	return (sub);
 }
-// int	main(void)
-// {
-// 	ft_substr ("helou my darling", 6, 2);
-// 	return (0);
-// }

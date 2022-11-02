@@ -6,12 +6,14 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:26:18 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/04 14:12:48 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:14:26 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//Localiza la ultima aparicion de c(convertido en char) en la string 
+//apuntada por s.
+//RETURN un puntero a la localizacion de c, o NULL si el caracter no aparece
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	count;

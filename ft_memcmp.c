@@ -6,18 +6,20 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:33:19 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/14 18:21:47 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:54:54 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Compara los n bytes de s1 con s2
+// RETURN 0 si s1 == s2, o la diferencia de los dos primeros bytes que difieren
+// tratados como unsigned char
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*string1;
 	unsigned char	*string2;
-	int				count;
-	int				c2;
+	size_t			count;
+	size_t			c2;
 
 	count = 0;
 	string1 = (unsigned char *)s1;

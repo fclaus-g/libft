@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:32:48 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/24 11:31:54 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/26 17:50:06 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/28 15:34:46 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Igual que bzero, pero le da el valor de 'c' convertido en unsigned char
-// no RETURN
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t	del;
 
-	del = 0;
-	while (del < len)
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nb;
+	int		sign;
+
+	sign = '-';
+	nb = n;
+	if (nb == -2147483648)
+		write (fd, "-2147483648", 11);
+	else if (nb >= 0 && nb <= 9)
+		ft_putchar_fd(nb + 48, fd);
+	else if (nb < 0)
 	{
-		((char *)b)[del] = ((unsigned char)c);
-		del++;
+		nb = -nb;
+		write (fd, &sign, 1);
+		ft_putnbr_fd (nb, fd);
 	}
-	return (b);
+	else
+	{
+		ft_putnbr_fd (nb / 10, fd);
+		ft_putchar_fd (nb % 10 + 48, fd);
+	}
 }
+
+// int	main(void)
+// {
+// 	printf ("")
+// }

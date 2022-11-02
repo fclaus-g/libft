@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:32:48 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/24 11:31:54 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/11/02 16:57:56 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/11/02 17:05:30 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Igual que bzero, pero le da el valor de 'c' convertido en unsigned char
-// no RETURN
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t	del;
 
-	del = 0;
-	while (del < len)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
 	{
-		((char *)b)[del] = ((unsigned char)c);
-		del++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (b);
 }

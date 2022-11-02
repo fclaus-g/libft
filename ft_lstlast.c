@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 11:02:03 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/28 12:51:50 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/11/02 14:22:44 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/11/02 14:46:17 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Copia 'n' bytes desde *src a *dst. SI se superponen el comportamiento es 
-// indefinido. en las aplicaciones que las string pudiean solaparse habria que 
-// usar memmove
-// RETURN 	el valor de dst, si las dos string estan vacias 0
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	size_t	cpy;
 
-	cpy = 0;
-	if (!dst && !src)
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (lst == 0)
 		return (0);
-	while (cpy < n)
-	{
-		((unsigned char *)dst)[cpy] = ((unsigned char *)src)[cpy];
-		cpy++;
-	}
-	return (dst);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

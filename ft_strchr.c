@@ -6,12 +6,15 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 12:37:25 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/04 11:04:45 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:40:48 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//Localiza la primera aparicion de 'c' convertida en char en la cadena 
+//apuntada por s el caracter NULL de la string se considera parte de la string
+//por tanto si c = '\0' la funcion localiza la terminacion.
+//RETURN un puntero a la primera concurrencia de c
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	count;

@@ -6,14 +6,14 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:05:25 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/03 15:32:47 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:30:25 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-
+// Copia strings de src a dst haciendo reemplazos mas seguros 
+// que strncpy y strncat
+// RETURN el num de caracteres copiados (size_t)
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	copier;

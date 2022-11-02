@@ -6,14 +6,14 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:05:12 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/03 15:32:34 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:48:10 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-
+//Concatena src al finasl de dat, dst size - strlen -1
+//RETURN la longitud total de dst despues de la copia, si dstsize que el tamaño 
+//de dst o dstsize es == 0 RETURN dstsize + tamaño de src 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	lendst;

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:32:48 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/24 11:31:54 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/26 17:43:12 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/26 17:48:52 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Igual que bzero, pero le da el valor de 'c' convertido en unsigned char
-// no RETURN
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t	del;
 
-	del = 0;
-	while (del < len)
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	count;
+
+	count = 0;
+	while (s[count])
 	{
-		((char *)b)[del] = ((unsigned char)c);
-		del++;
+		write (fd, &s[count], 1);
+		count++;
 	}
-	return (b);
 }

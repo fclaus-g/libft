@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:32:48 by fclaus-g          #+#    #+#             */
-/*   Updated: 2022/10/24 11:31:54 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/11/02 14:52:37 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/11/02 15:32:07 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Igual que bzero, pero le da el valor de 'c' convertido en unsigned char
-// no RETURN
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t	del;
 
-	del = 0;
-	while (del < len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*walker;
+
+	walker = *lst;
+	if (walker == 0)
+		*lst = new;
+	else
 	{
-		((char *)b)[del] = ((unsigned char)c);
-		del++;
+		walker = ft_lstlast(walker);
+		walker->next = new;
 	}
-	return (b);
 }
